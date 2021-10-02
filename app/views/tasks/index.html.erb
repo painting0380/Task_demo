@@ -7,6 +7,7 @@
     <tr>
       <td>任務標題</td>
       <td>任務內容</td>
+      <td>處理</td>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,9 @@
     <tr>
       <td><%= task.title %></td>
       <td><%= task.content %></td>
+      <td>
+        <%= link_to "編輯", edit_task_path(task) %>        
+      </td>
     </tr>
     <% end %>
   </tbody>

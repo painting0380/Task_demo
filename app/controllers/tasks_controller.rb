@@ -20,6 +20,22 @@ class TasksController < ApplicationController
     	end
 	end
 
+	def edit
+		@task = Task.find_by(id: params[:id])
+	end
+
+	def update
+		@task = Task.find_by(id: params[:id])
+
+		if @task.update(task_params)
+		# 成功
+		redirect_to tasks_path, notice: "資料更新成功!"
+		else
+		# 失敗
+		render :edit
+		end
+	end
+
 	private
 		def task_params
 		params.require(:task).permit(:title, :content)
