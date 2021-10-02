@@ -36,6 +36,12 @@ class TasksController < ApplicationController
 		end
 	end
 
+	def destroy
+		@task = Task.find_by(id: params[:id])
+		@task.destroy if @task
+		redirect_to tasks_path, notice: "任務資料已刪除!"
+	end
+
 	private
 		def task_params
 		params.require(:task).permit(:title, :content)
