@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
 	def index
-		@tasks = Task.all
+		@tasks = Task.order_by_created_at
 	end
 
 	def new
