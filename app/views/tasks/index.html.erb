@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <td><%= t('任務標題樣版') %></td>
-      <td><%= t('任務內容樣版') %></td>      
-      <td><%= t('創建時間樣版') %></td>
+      <td><%= t('任務內容樣版') %></td>
+      <td><%= link_to I18n.t(:創建時間樣版), :sort => "created_at" %></td>
+      <td><%= link_to I18n.t(:結束時間樣版), :sort => "end_time" %></td>
       <td><%= t('處理樣版') %></td>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
       <td><%= task.title %></td>
       <td><%= task.content %></td>
       <td><%= task.created_at.strftime("%m/%d/%Y %I:%M %p") %></td>
+      <td><%= task.end_time %></td>
       <td>
         <%= link_to I18n.t(:編輯樣版), edit_task_path(task) %>
         <%= link_to I18n.t(:刪除樣版), task_path(task), method: "delete", data: { confirm: I18n.t(:確認刪除樣版) } %>

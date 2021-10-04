@@ -16,5 +16,8 @@
   <%= f.label :content, I18n.t(:任務內容樣版) %>
   <%= f.text_field :content %> <br />
 
+  <%= f.label :end_time, I18n.t(:結束時間樣版) %>
+  <%= f.time_field :end_time ,type: "datetime-local",class: 'form-control' %> <br />
+
   <%= f.submit %>
 <% end %>

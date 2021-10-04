@@ -15,4 +15,9 @@ require 'rails_helper'
     subject.content = nil
     expect(subject).to_not be_valid
   end
+
+  it "applies a default scope to collections by departure ascending" do
+    expect(Task.all).to eq Task.all.order(created_at: :desc)
+  end
+
 end
