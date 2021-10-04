@@ -8,12 +8,13 @@ class TasksController < ApplicationController
 			@tasks = Task.search_title_or_content( "%"+params[:title]+"%" )			
 			.search_status_type("%"+params[:status]+"%")
 			.order_by_created_at
+			.page(params[:page]).per(5)
 
 		elsif params[:sort]
-        	@tasks = Task.order(params[:sort])
+        	@tasks = Task.order(params[:sort]).page(params[:page]).per(5)
 
         else
-            @tasks = Task.order_by_created_at
+            @tasks = Task.order_by_created_at.page(params[:page]).per(5)
 
         end
 
