@@ -22,7 +22,7 @@
   <%= f.label :status_type, I18n.t(:狀態樣版) %>
   <%= f.select(:status_type, options_for_select([['待處理','待處理'],['進行中','進行中'], ['完成','完成']]), prompt: "請選擇狀態") %> <br />
 
-  <%= f.label :priority_type %>
+  <%= f.label :priority_type, I18n.t(:優先順序樣版)  %>
   <%= f.select(:priority_type, options_for_select([['高','高'],['中','中'], ['低','低']]), prompt: "請選擇優先順序") %> <br />
 
   <%= f.submit %>

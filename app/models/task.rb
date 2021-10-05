@@ -6,4 +6,5 @@ class Task < ApplicationRecord
 	scope :search_title_or_content, ->(p) { where('title LIKE ? OR content LIKE ?', p, p) }
 	# enum priority: { 高: 0, 中: 1, 低: 2 }
 	# scope :priority_order, order(:priority)
+	belongs_to :user
 end
