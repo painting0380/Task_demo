@@ -23,6 +23,7 @@
       <td><%= link_to I18n.t(:創建時間樣版), :sort => "created_at" %></td>
       <td><%= link_to I18n.t(:結束時間樣版), :sort => "end_time" %></td>
       <td><%= t('狀態樣版') %></td>
+      <td><%= link_to I18n.t(:優先順序樣版), :sort => "priority_type" %></td>
       <td><%= t('處理樣版') %></td>
     </tr>
   </thead>
@@ -34,6 +35,7 @@
       <td><%= task.created_at.strftime("%m/%d/%Y %I:%M %p") %></td>
       <td><%= task.end_time %></td>
       <td><%= task.status_type %></td>
+      <td><%= task.priority_type %></td>
       <td>
         <%= link_to I18n.t(:編輯樣版), edit_task_path(task) %>
         <%= link_to I18n.t(:刪除樣版), task_path(task), method: "delete", data: { confirm: I18n.t(:確認刪除樣版) } %>
