@@ -1,0 +1,19 @@
+<div class="mt-3 d-flex align-items-center justify-content-center">
+  <h2><%= t('登入樣版') %></h2>
+</div>
+
+<%= form_with model: @student, url: sign_in_path do |form| %>
+
+	<div class="mb-3">
+		<%= form.label :email, I18n.t(:Email帳號樣版) %>
+		<%= form.text_field :email, class: "form-control", placeholder: "steve@gmail.com" %>
+	</div>
+	<div class="mb-3">
+		<%= form.label :password_field, I18n.t(:密碼樣版) %>
+		<%= form.password_field :password, class: "form-control", placeholder: "password" %>
+	</div>
+	<div class="mb-3">
+		<%= form.submit I18n.t(:登入樣版), class:'btn btn-primary' %>
+	</div>
+
+<% end %>

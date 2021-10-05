@@ -1,6 +1,8 @@
-<h1><%= t('新增任務樣版') %></h1>
+<div class="mt-3">
+	<h3><%= t('新增任務樣版') %></h3>
+</div>
 
 <%= render "form", task: @task %>
 
 <br />
-<%= link_to I18n.t(:回任務列表樣版), tasks_path %>
+<%= link_to I18n.t(:回任務列表樣版), tasks_path, class: 'btn btn-primary' %>

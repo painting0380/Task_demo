@@ -12,8 +12,9 @@
   </head>
 
   <body>
+    <%= render partial: "shared/navbar" %>
     <div class="container"> 
-      <%= notice %>
+      <%= render partial: "shared/flash" %>
       <%= yield %>
     </div>
   </body>
